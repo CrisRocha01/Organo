@@ -1,0 +1,70 @@
+DESIGN: https://www.figma.com/file/T6BLI1HfB81eYOiVgpqQz7/Projeto-Intro-ao-React?node-id=134%3A128
+
++ criar aplicação: npx create-react-app <nome da aplicacao>;
++ startar: npm start. A aplicação sobe na porta 3000;
++ Estrutura das funções dos componentes (index.js):
+	import './Nome.css
+	const Nome = () => {
+		return (
+			<componente JSX/>
+		)
+	}
+export default Banner;
+
++ incluir uma função no script: <evento>={<nomeDaFuncao>};
++ exemplo map: {props.itens.map(item => <option key={item}>{item}</option>)}
++ Hook: useState: const [valorInicial, setValorInicial] = useState("ValorInicial");//desentruturação
+
+- JSX: para reconhecer variável, colocar entre chaves;
+- a pasta public(raiz) é usada para componentes estáticos;
+- index.js = ponto de entrada da aplicação (bootstrap);
+- a funcoes de componentes podem receber um paramentro de app(props).
+- Atalho para importação ctrl+space;
+- Hooks: usados para setar o estado inicial dos elementos atualizáveis;
+
+
+
+obs.:
+ - npx usa recursos externos;
+ - npm usa bibliotecas já instaladas no nodejs;
+ - Nomes de componentes começa com maiuscula
+ - não usa na aula scr: app.css, app.test.js, no index referencias ao reportWeb, logo.sb, report, setup.
+ - sempre que o elemento começar com use, trata-se de um hook;
+
+
+aulas problemáticas:
+*Interagindo com o usulário:
+02:
+ - incluir o evento onChange no componente input do formulario e associar a uma função:
+<input onChange={aoDigitado}
+ - implementar a função aoDigitado para capturar os valors:
+const aoDigitado = (evento) => {
+	console.log(evento.target.value)
+	}
+ - incluir o value do input:
+<input value = {valor};
+ - O valor da variável valor não pode ser alterado no formulário: O react só renderiza o componente novamente desse jeito;
+
+03 controlando estado do componente:
+ - usar o hook "useState()"
+ - substituir a variável valor por const [valor, setValor] = useState(''). import { useState } from "react";
+ - const [valor, setValor] = useState('') : desentruturação do função valor é o valor inicial e setValor é o setter que permite reenderizar o valor inicial;
+ - Cada campo de texto terá o seu estado, portanto, os hooks devem ser retirados dos inputs e colocado no formulário;
+ - preparar inputs: <input value = {props.valor} onChange={aoDigitado};
+ - função: const aoDigitado = (evento) => {
+  	      props.aoAlterado(evento.target.value)
+   	 };
+ - na função do Formulário, incluir os hooks : ex: const [nome, setNome] = useState('');
+ - no <componente/> do input incluir: valor = {nome} aoAlterado={valor => setNome(valor)}
+ - no index do select incluiro o evento onChange={evento => props.aoAlterado(evento.target.value)}
+
+
+
+banco de imagem:
+https://github.com/acenelio.png
+https://github.com/CrisRocha01.png
+https://github.com/viniciosneves.png
+https://github.com/peas.png
+https://github.com/carlos.png
+https://github.com/joao.png
+https://github.com/pedro.png
