@@ -59,6 +59,12 @@ const aoDigitado = (evento) => {
  - no index do select incluiro o evento onChange={evento => props.aoAlterado(evento.target.value)}
 
 
+-------------------------------------------------
+BIBLIOTECA DE COMPONENTES:
+mui.com
+ant.design
+
+
 
 banco de imagem:
 https://github.com/acenelio.png
